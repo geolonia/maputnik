@@ -9,6 +9,8 @@ import {MdFileDownload, MdOpenInBrowser, MdSettings, MdLayers, MdHelpOutline, Md
 import logoImage from 'maputnik-design/logos/logo-color.svg'
 import pkgJson from '../../package.json'
 
+import { __ } from "@wordpress/i18n";
+
 
 // This is required because of <https://stackoverflow.com/a/49846426>, there isn't another way to detect support that I'm aware of.
 const browser = detect();
@@ -135,31 +137,31 @@ export default class Toolbar extends React.Component {
     const views = [
       {
         id: "map",
-        title: "Map",
+        title: __("Map"),
       },
       {
         id: "inspect",
-        title: "Inspect",
+        title: __("Inspect"),
         disabled: this.props.renderer !== 'mbgljs',
       },
       {
         id: "filter-deuteranopia",
-        title: "Map (deuteranopia)",
+        title: __("Map (deuteranopia)"),
         disabled: !colorAccessibilityFiltersEnabled,
       },
       {
         id: "filter-protanopia",
-        title: "Map (protanopia)",
+        title: __("Map (protanopia)"),
         disabled: !colorAccessibilityFiltersEnabled,
       },
       {
         id: "filter-tritanopia",
-        title: "Map (tritanopia)",
+        title: __("Map (tritanopia)"),
         disabled: !colorAccessibilityFiltersEnabled,
       },
       {
         id: "filter-achromatopsia",
-        title: "Map (achromatopsia)",
+        title: __("Map (achromatopsia)"),
         disabled: !colorAccessibilityFiltersEnabled,
       },
     ];
@@ -174,7 +176,7 @@ export default class Toolbar extends React.Component {
           className="maputnik-toolbar-logo-container"
         >
           <a className="maputnik-toolbar-skip" href="#skip-menu">
-            Skip navigation
+            {__("Skip navigation")}
           </a>
           <a
             href="https://github.com/maputnik/editor"
@@ -192,24 +194,24 @@ export default class Toolbar extends React.Component {
         <div className="maputnik-toolbar__actions">
           <ToolbarAction wdKey="nav:open" onClick={this.props.onToggleModal.bind(this, 'open')}>
             <MdOpenInBrowser />
-            <IconText>Open</IconText>
+            <IconText>{__("Open")}</IconText>
           </ToolbarAction>
           <ToolbarAction wdKey="nav:export" onClick={this.props.onToggleModal.bind(this, 'export')}>
             <MdFileDownload />
-            <IconText>Export</IconText>
+            <IconText>{__("Export")}</IconText>
           </ToolbarAction>
           <ToolbarAction wdKey="nav:sources" onClick={this.props.onToggleModal.bind(this, 'sources')}>
             <MdLayers />
-            <IconText>Data Sources</IconText>
+            <IconText>{__("Data Sources")}</IconText>
           </ToolbarAction>
           <ToolbarAction wdKey="nav:settings" onClick={this.props.onToggleModal.bind(this, 'settings')}>
             <MdSettings />
-            <IconText>Style Settings</IconText>
+            <IconText>{__("Style Settings")}</IconText>
           </ToolbarAction>
 
           <ToolbarSelect wdKey="nav:inspect">
             <MdFindInPage />
-            <IconText>View </IconText>
+            <IconText>{__("View")} </IconText>
             <select onChange={(e) => this.handleSelection(e.target.value)} value={currentView.id}>
               {views.map((item) => {
                 return (
@@ -223,11 +225,11 @@ export default class Toolbar extends React.Component {
 
           <ToolbarLink href={"https://github.com/maputnik/editor/wiki"}>
             <MdHelpOutline />
-            <IconText>Help</IconText>
+            <IconText>{__("Help")}</IconText>
           </ToolbarLink>
           <ToolbarLinkHighlighted href={"https://gregorywolanski.typeform.com/to/cPgaSY"}>
             <MdAssignmentTurnedIn />
-            <IconText>Take the Maputnik Survey</IconText>
+            <IconText>{__("Take the Maputnik Survey")}</IconText>
           </ToolbarLinkHighlighted>
         </div>
       </div>

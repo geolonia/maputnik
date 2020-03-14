@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/components/Toolbar.jsx:140
+msgid "Map"
+msgstr ""
+
+#: src/components/Toolbar.jsx:144
+msgid "Inspect"
+msgstr ""
+
+#: src/components/Toolbar.jsx:149
+msgid "Map (deuteranopia)"
+msgstr ""
+
+#: src/components/Toolbar.jsx:154
+msgid "Map (protanopia)"
+msgstr ""
+
+#: src/components/Toolbar.jsx:159
+msgid "Map (tritanopia)"
+msgstr ""
+
+#: src/components/Toolbar.jsx:164
+msgid "Map (achromatopsia)"
+msgstr ""
+
+#: src/components/Toolbar.jsx:179
+msgid "Skip navigation"
+msgstr ""
+
+#: src/components/Toolbar.jsx:197
+msgid "Open"
+msgstr ""
+
+#: src/components/Toolbar.jsx:201
+msgid "Export"
+msgstr ""
+
+#: src/components/Toolbar.jsx:205
+msgid "Data Sources"
+msgstr ""
+
+#: src/components/Toolbar.jsx:209
+msgid "Style Settings"
+msgstr ""
+
+#: src/components/Toolbar.jsx:228
+msgid "Help"
+msgstr ""
+
+#: src/components/Toolbar.jsx:232
+msgid "Take the Maputnik Survey"
+msgstr ""

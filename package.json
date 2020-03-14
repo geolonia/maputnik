@@ -12,7 +12,8 @@
     "start": "webpack-dev-server --progress --profile --colors --config config/webpack.config.js",
     "lint-js": "eslint --ext js --ext jsx src test",
     "lint-css": "stylelint \"src/styles/*.scss\"",
-    "lint": "npm run lint-js && npm run lint-css"
+    "lint": "npm run lint-js && npm run lint-css",
+    "makepot": "node_modules/@babel/cli/bin/babel.js ./src -x '.jsx' --config-file ./.babelrc.i18n"
   },
   "repository": {
     "type": "git",
@@ -103,6 +104,7 @@
     }
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.6.2",
@@ -116,6 +118,7 @@
     "@wdio/selenium-standalone-service": "^5.13.2",
     "@wdio/spec-reporter": "^5.14.5",
     "@wdio/sync": "^5.14.4",
+    "@wordpress/babel-plugin-makepot": "^3.4.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "8.0.6",
     "babel-plugin-istanbul": "^6.0.0",
@@ -136,6 +139,7 @@
     "mkdirp": "^1.0.3",
     "mocha": "^7.0.1",
     "node-sass": "^4.13.1",
+    "po2json": "^0.4.5",
     "react-hot-loader": "^4.12.19",
     "sass-loader": "^8.0.2",
     "selenium-standalone": "^6.17.0",
