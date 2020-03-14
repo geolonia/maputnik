@@ -148,7 +148,7 @@
     "uuid": "^3.4.0",
     "webdriverio": "^5.18.7",
     "webpack": "^4.41.6",
-    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
