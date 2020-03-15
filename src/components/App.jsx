@@ -250,7 +250,6 @@ export default class App extends React.Component {
     import(`../lang/${lang}.json`)
       .then((module) => {
         const localeData = module.default.locale_data.messages
-        console.log(localeData)
         setLocaleData(localeData)
         this.setState({ localeData })
       })
