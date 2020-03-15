@@ -47,6 +47,10 @@ msgstr ""
 msgid "Style Settings"
 msgstr ""
 
+#: src/components/Toolbar.jsx:214
+msgid "View"
+msgstr ""
+
 #: src/components/Toolbar.jsx:228
 msgid "Help"
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=utf-8\n"
-"X-Generator: babel-plugin-makepot\n"
+"lang: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/components/Toolbar.jsx:140
 msgid "Map"

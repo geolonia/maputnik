@@ -13,7 +13,8 @@
     "lint-js": "eslint --ext js --ext jsx src test",
     "lint-css": "stylelint \"src/styles/*.scss\"",
     "lint": "npm run lint-js && npm run lint-css",
-    "makepot": "node_modules/@babel/cli/bin/babel.js ./src -x '.jsx' --config-file ./.babelrc.i18n"
+    "makepot": "node_modules/@babel/cli/bin/babel.js ./src -x '.jsx' --config-file ./.babelrc.i18n",
+    "po2json": "find src/lang -name *.po | sed -e s/\\.po// | awk '{print $1  \".po \" $1 \".json\"}' | xargs po2json -f jed"
   },
   "repository": {
     "type": "git",
@@ -139,7 +140,7 @@
     "mkdirp": "^1.0.3",
     "mocha": "^7.0.1",
     "node-sass": "^4.13.1",
-    "po2json": "^0.4.5",
+    "po2json": "^1.0.0-alpha",
     "react-hot-loader": "^4.12.19",
     "sass-loader": "^8.0.2",
     "selenium-standalone": "^6.17.0",
