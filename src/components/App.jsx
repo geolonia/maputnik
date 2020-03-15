@@ -35,6 +35,7 @@ import tokens from '../config/tokens.json'
 import isEqual from 'lodash.isequal'
 import Debug from '../libs/debug'
 import queryUtil from '../libs/query-util'
+import { setLocaleData } from '@wordpress/i18n'
 
 import MapboxGl from 'mapbox-gl'
 
@@ -237,11 +238,26 @@ export default class App extends React.Component {
       openlayersDebugOptions: {
         debugToolbox: false,
       },
+      localeData: null,
     }
 
     this.layerWatcher = new LayerWatcher({
       onVectorLayersChange: v => this.setState({ vectorLayers: v })
     })
+
+    const { lang } = Object.fromEntries(location.search.replace(/^\?/, '').split('&').map(kv => kv.split('=')))
+
+    import(`../lang/${lang}.json`)
+      .then((module) => {
+        const localeData = module.default.locale_data.messages
+        console.log(localeData)
+        setLocaleData(localeData)
+        this.setState({ localeData })
+      })
+      .catch((error) => {
+        console.log(error)
+        this.setState({ localeData: false })
+      } )
   }
 
   handleKeyPress = (e) => {
@@ -637,6 +653,9 @@ export default class App extends React.Component {
   }
 
   render() {
+
+    if(this.state.localeData === null) return null;
+
     const layers = this.state.mapStyle.layers || []
     const selectedLayer = layers.length > 0 ? layers[this.state.selectedLayerIndex] : null
     const metadata = this.state.mapStyle.metadata || {}
